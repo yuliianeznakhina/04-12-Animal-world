@@ -1,0 +1,22 @@
+#pragma once
+#include <iostream>
+#include "Animal.h"
+#include "Herbivore.h"
+
+
+using namespace std;
+
+class Bison :public Herbivore
+{
+public:
+	Bison() :Herbivore() {}
+	Bison(double w) :Herbivore(w) {}
+
+	void SetWeight(double w) { weight = w; }
+	double GetWeight() { return weight; }
+	void SetAlive(bool a) { alive = a; }
+	double GetAlive() { return alive; }
+
+	void EatGrass() { weight += 10; }
+
+};
