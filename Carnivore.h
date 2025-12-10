@@ -5,7 +5,7 @@
 
 using namespace std;
 
-class Carnivore
+class Carnivore :public Animal
 {
 protected:
 	double power;

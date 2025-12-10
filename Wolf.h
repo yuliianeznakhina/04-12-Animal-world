@@ -21,7 +21,8 @@ public:
 		{
 			power += 10;
 			herbivore->SetAlive(false);
+			cout << "Wolf has eaten.\n";
 		}
-		else { power -= 10; }
+		else { power -= 10; cout << "Wolf has not eaten.\n";}
 	}
 };

@@ -17,6 +17,6 @@ public:
 	void SetAlive(bool a) { alive = a; }
 	double GetAlive() { return alive; }
 
-	void EatGrass() { weight += 10; }
+	void EatGrass() { weight += 10; cout << "Bison has eaten.\n";}
 
 };

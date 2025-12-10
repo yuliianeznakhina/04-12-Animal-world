@@ -14,10 +14,10 @@ protected:
 
 public:
 	Continent(){}
-	virtual void AddHerbivore(Herbivore& obj) = 0;
-	virtual void AddCarnivore(Carnivore& obj) = 0;
-	virtual Herbivore& GetHerbivore(int i) = 0;
-	virtual Carnivore& GetCarnivore(int i) = 0;
-	virtual void HerbivoresEat() = 0;
-	virtual void CarnivoresEat() = 0;
+	virtual void AddHerbivore(Herbivore* obj) = 0;
+	virtual void AddCarnivore(Carnivore* obj) = 0;
+	virtual void HerbivoreEat(int i) = 0;
+	virtual void CarnivoreEat(int i) = 0;
+	virtual void AllHerbivoresEat() = 0;
+	virtual void AllCarnivoresEat() = 0;
 };

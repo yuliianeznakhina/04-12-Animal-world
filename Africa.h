@@ -11,30 +11,32 @@ class Africa: public Continent
 {
 public:
 	Africa(){}
-	void AddHerbivore(Herbivore& obj)
+	void AddHerbivore(Herbivore* obj)
 	{
-		herbivores.push_back(obj);
+		herbivores.push_back(*obj);
+		cout << "Herbivore added to Africa.\n";
 	}
-	void AddCarnivore(Carnivore& obj)
+	void AddCarnivore(Carnivore* obj)
 	{
-		carnivores.push_back(obj);
+		carnivores.push_back(*obj);
+		cout << "Carnivore added to Africa.\n";
 	}
-	Herbivore& GetHerbivore(int i)
+	void HerbivoreEat(int i)
 	{
-		return herbivores[i];
+		herbivores[i].EatGrass();
 	}
-	Carnivore& GetCarnivore(int i)
+	virtual void CarnivoreEat(int i)
 	{
-		return carnivores[i];
+		carnivores[i].Eat(&herbivores[i]);
 	}
-	void HerbivoresEat()
+	void AllHerbivoresEat()
 	{
 		for (auto ptr = herbivores.begin(); ptr != herbivores.end(); ptr++)
 		{
 			ptr->EatGrass();
 		}
 	}
-	void CarnivoresEat()
+	void AllCarnivoresEat()
 	{
 		for (auto ptr = carnivores.begin(); ptr != carnivores.end(); ptr++)
 		{
